@@ -1,16 +1,15 @@
-#include<stdio.h>
-int main()
-{
+#include <stdio.h>
+int main() {
     int i;
-    int arr[5]={2,3,15,4,9};
-     int max=arr[0];
-
-    for(i=0;i<5;i++){
-        if(arr[i]>max){
-        max=arr[i];
-        }
+    int arr[5];
+    for (i = 0; i < 5; ++i) {
+        printf("Enter number%d: ", i + 1);
+        scanf("%d", &arr[i]);
     }
-    printf("The largest number of array is:%d",max);
-
+    for (i = 1; i < 5; ++i) {
+        if (arr[0] < arr[i])
+            arr[0] = arr[i];
+    }
+    printf("Largest element = %d", arr[0]);
     return 0;
 }
